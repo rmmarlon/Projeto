@@ -1,0 +1,5 @@
+Na linha 8 ocorre a chamada para a função ajaxInit() que esta dentro do arquivo
+referenciado na linha 5. A linha 9 getElementByid('texto') 1 e innerHTML2 inserem o
+texto Carregando dentro do DIV com o id igual a texto.
+Nas linhas 11, 12 e 13 são vericados o status do pedido, e do retorno e efetiva inserção
+do conteúdo do arquivo texto.txt no DIV, respectivamente.

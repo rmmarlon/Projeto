@@ -1,0 +1,155 @@
+/* CSS Document */
+*{ margin:0; padding:0;font-family:Verdana, Geneva, sans-serif; color:#333;}
+body{
+	background:#252;
+}
+#sair{
+	float:left;
+}
+#sair:hover{
+	cursor:pointer;
+	border-radius:100%;
+	box-shadow: 0 0 15px rgba(51,102,204,1);
+}
+#logado{
+	float:right;
+	width:82%;
+	color:#caca6d;
+	margin-right:0.5%;
+	padding:0.5% 1%;
+	box-shadow: 0 3px 5px rgba(0,0,0,1);
+	text-shadow: 0 3px 5px rgba(0,0,0,1);
+	text-align:center;
+}
+
+#usuarios{
+	height:100%;
+	position:absolute;
+	left:0;
+	top:0;
+	width:15%;
+	border-left:1px solid #333;
+	background:#696;
+	overflow-y:auto;
+	overflow-x:hidden;
+}
+#usuarios ul{
+	list-style:none;
+	width:100%;
+}
+#usuarios li{
+	padding:1%;
+	display:block;
+	width:100%;
+	margin-bottom:1%;
+	float:left;
+}
+#usuarios li a{
+	text-decoration:none;
+	color:#cc6;
+	padding:3%;
+	font-size:0.80em;
+}
+#usuarios li:hover{
+	background:#363;
+}
+#janelas{
+	position:fixed;
+	bottom:0;
+	right:0;
+	width:80%;
+
+}
+.janela{
+	border-radius:5px 5px 0 0;
+	width:230px;
+	margin-right:5px;
+	display:inline;
+	float:right;
+	margin-bottom:0;
+	border-left:1px solid #333;
+	border-right:1px solid #333;	
+}
+.topo{
+	float:left;
+	width:230px;
+	background:#242;
+	height:25px;
+	border-bottom:1px solid #333;
+	cursor:pointer;	
+}
+.topo.fixar{
+	position:absolute;
+	bottom:0;
+}
+.topo span{
+	float:left;
+	font-size:0.90em;
+	color:#fff;
+	margin:4px;
+}
+.topo a#fechar{
+	float:right;
+	padding:1px 4px 0.5px;
+	height:21px;
+	font-size:0.90em;
+	color:#fff;
+	text-decoration:none;
+
+}
+.topo a#fechar:hover{
+	background:#696;
+	border-radius:5px;
+}
+.janela input[type=text]{
+	padding:5px;
+	border:0;
+	outline:none;
+	background:#f4f4f4;
+	white-space:pre-wrap;
+	color:#333;
+	width:100%;
+}
+.mensagens{
+	float:left;
+	width:230px;
+	background:#fff;
+	height:200px;
+	border-bottom:1px solid #333;
+}
+.mensagens ul.listar{
+	list-style:none;
+	float:left;
+	width:230px;
+	background:#fff;
+	height:200px;
+	overflow-y:auto;
+	text-overflow:ellipsis;
+	overflow-x:hidden;
+}
+.mensagens ul.listar li{
+	float:right;
+	width:100%;
+	
+	padding-bottom:5px;
+}
+.mensagens ul.listar li span{
+	font-size:0.55em;
+	width:100%;
+	color:#34f;
+	margin:3px;
+}
+.mensagens ul.listar li p{
+	font-size:0.60em;
+	float:left;
+	width:100%;
+	margin-left:3px;
+}/*
+.mensagens ul.listar li p:hover{
+	background:#009;
+}
+log le
+login: leandrodasilva313@yahoo.com.br
+senha: L79m6a4r
+*/
+ 

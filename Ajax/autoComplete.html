@@ -1,0 +1,75 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Auto </title>
+		<script type="text/javascript" src="ajaxInit.js"></script>
+		<script type="text/javascript">
+			function sugerir(s){
+				ajax = ajaxInit();
+				document.getElementById("resultado").innerHTML="Carregando...";
+				if(ajax){
+					ajax.onreadystatechange = resultado;
+					url = 'autoCompletar.php?s='+s;
+					ajax.open('GET', url, true);
+					ajax.send(null);
+				}
+			}
+			
+			function resultado(){
+				if( ajax.readyState == 4) {
+					if( ajax.status == 200) {
+						var x = 0;
+						alert(ajax.responseText);
+						json = eval("("+ajax.responseText+")");
+						limparDestino("resultado");
+						document.getElementById('resultado').style.visibility='visible';
+						for ( x=0; x < json.pal.length; x++) {
+							P = document.createElement("p");
+							P.appendChild(document.createTextNode(json.pal[x]));
+							P.setAttribute( " onClick " , " document . getElementById (' pal '). value ='"+
+							json.pal[x]+" '; document.getElementById('resultado').style.visibility ='hidden'");
+							document.getElementById("resultado").appendChild(P);
+						}
+					}
+				}
+			}
+			function limparDestino(destino){
+				obj = document.getElementById (destino);
+				while (obj.firstChild)
+					obj.removeChild(obj.firstChild);
+			}
+		</script>
+		<style type="text/css">
+			#resultado{
+				background−color:#e5e5e5;
+				border:1px solid #000;
+				color:#000;
+				width:150px;
+				padding:0px;
+				margin:0px;
+				position:relative;
+				margin−left:45px;
+				margin−top:0px;
+			}
+			p {
+				line−height:15px;
+				margin : 0px ;
+				font : 18px " Arial " , sans−serif;
+				padding : 5px ;
+			}
+			p : hover {
+				background−color: #cdcdcd;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<form name="auto">
+			<fieldset style="width:50%; margin:auto">
+				<label id="pal" accesskey="pal">Palavra</label>
+				<input type="text" id="pal" name="pal" onKeyup="sugerir(document.getElementById('pal').value)" />
+				<div id="resultado" style="visibility:hidden"></div>
+			</fieldset>
+		</form>
+	</body>
+</html>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--usada para fazer comunicação de uma linguagem com outra-->
+<agenda>
+	<contato>
+		<nome>Marlo</nome>
+		<fone>9613-8079</fone>
+	</contato>
+	
+	<contato>
+		<nome>Cardoso</nome>
+		<fone>3657-8846</fone>
+	</contato>
+</agenda>

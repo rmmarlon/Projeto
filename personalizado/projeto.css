@@ -1,0 +1,503 @@
+@charset "utf-8";
+/* CSS Document */
+
+*{ margin:0; padding:0; }
+html, body {
+	margin-top:0%; 
+	padding:0; 
+	height:100%
+}
+.modal{
+	border-radius:6px !important;
+}
+iframe{
+	width:100%;
+	height:94.5%;
+}
+a{
+	text-decoration:none;
+}
+
+/*
+h1,h2,h4,h5,h6{
+	text-align:center;
+	color:#000;
+	text-transform:uppercase;
+	text-shadow:0 3px 5px #666;
+}*/
+h3{
+	text-align:center;
+	color:#000;
+	text-transform:uppercase;
+}
+td{
+	font-size:0.80em;
+	color:#000;
+	font-family:verdana;
+}
+th{
+	text-align:center !important;
+}
+input, textarea, select{
+	margin:0%;
+	border-radius:5px;
+	background:#FFF;
+	border:1px solid #CCC;
+}
+input a:focus{
+	border:none;
+}
+select{
+	height:30px
+}
+/*Index*/
+.active{
+	background: -webkit-linear-gradient(#6cd1EF, #4fB7D5);
+	background: -moz-linear-gradient(#6cd1EF,#4fB7D5);
+	background: -ms-linear-gradient(#6cd1EF,#4fB7D5);
+}
+.pagination{
+	margin:0;
+	padding:0; 
+}
+#menus{
+	width:100%;
+	background: -webkit-linear-gradient(#5bc0de,#2f96b4);
+}
+#menus ul{
+	list-style:none;
+	margin-left:20%;
+	padding:0.5% 1.5%;
+}
+#menus li{
+	border-right:2px inset #2f96b4;
+	display:inline;
+	padding:0.7% 1.5%;
+}
+#menus a{
+	font-family:Verdana, Geneva, sans-serif;
+	font-size:0.90em;
+	color:#FFF;
+	text-decoration:none;
+}
+#menus li:hover{
+	color:#fff;background-color:#2f96b4;*background-color:#2a85a0;
+	padding:0.7% 1.5%;
+}
+.limpaModal{
+	display:none;
+}
+/*Cadastro*/
+.callpage{
+	cursor:pointer;
+}
+.center{
+	text-align:center;
+}
+.inputPesquisa{
+	border-radius:5px 0 0 5px;
+}
+.btnPesquisa{
+	margin-left:-0.8%; 
+	padding:0.4% !important; 
+	border:1px solid #ccc;
+	border-radius:0 5px 5px 0; 
+	background:#FFF;
+}
+.dados{
+	width:35%;
+	margin: 2% auto;
+	border-radius:5px;
+	background: -webkit-radial-gradient(right top,#DeDaDf, #F0F9Ea, #e6e9Df);
+	background: -moz-radial-gradient(right top,#DeDaDf, #F0F9Ea, #e6e9Df);
+	background: -ms-radial-gradient(right top,#DeDaDf, #F0F9Ea, #e6e9Df);
+	border:1px inset #CFCFCF;
+}
+.dadosB{
+	width:60%;
+	margin: 2% auto;
+	border-radius:5px;
+	background: -webkit-radial-gradient(right top,#DeDaDf, #F0F9Ea, #e6e9Df);
+	border:1px inset #CFCFCF;
+}
+/*Produto*/
+#legend{
+	margin-left:1%;
+	cursor:pointer;
+	border-radius:3px;
+	float:left;
+}
+#legend:hover{
+	text-shadow:0 0 3px rgba(102,180,102,1);
+}
+#lgdOpcoes{
+	display:none;
+	width:50%;
+	margin-left:1%;
+	border-radius:3px;
+	float:left;
+}
+/*PRoduto*/
+.readOnly{
+	width:10%
+}
+.labelForm{
+	text-align: right;
+	margin-right: 0.5em;
+	width:13em;
+	float:left;
+	font-weight:bold;
+}
+.labelFormMenor{
+	text-align: right;
+	margin-right: 0.5em;
+	width:5em;
+	float:left;
+	font-weight:bold;
+}
+/*FLutuacoes*/
+.clear{
+	clear:both;
+}
+.floatRight{
+	float:right;
+}
+.floatRightWidth{
+	float:right;
+	width:50% !important;
+}
+.floatRightMargin{
+	float:right;
+	margin-right:4%;
+}
+.floatLeft{
+	float:left;
+}
+.floatLeftMargin{
+	float:left;
+	margin-left:4%;
+}
+/*Modal*/
+.nome{
+	width:90%;
+	float:left;
+	font-size:1.25em;
+}
+#descPro{
+	width:65%;
+	float:left;
+}
+#descVal{
+	width:25%;
+	float:left;
+}
+.botao{
+	width:5%;
+	float:left;
+}
+#mask {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9000;
+  background-color:#000;
+  display:none;
+  height:100%;
+}
+
+#maskB {
+  position:absolute;
+  left:0;
+  top:0;
+  z-index:9005;
+  background-color:#000;
+  display:none;
+  height:100%;
+}
+.window {
+  background-color:#FFF;
+  position:absolute;
+  left:0;
+  top:0;
+  display:none;
+  z-index:90001;
+  padding:20px;
+  border:#000 solid 1px;
+}
+
+.windowB {
+   background-color:#FFF;
+  position:absolute;
+  left:0;
+  top:0;
+  display:none;
+  z-index:90003;
+  padding:20px;
+  border:#000 solid 1px;
+}
+/*
+	FUNÇÕES CSS DO JALERT
+*/
+.audio_alerta{
+	display:none;
+}
+#popup_container {
+	font-family: Calibri;
+	font-size: 12px;
+	min-width: 300px; /* Dialog will be no smaller than this */
+	max-width: 600px; /* Dialog will wrap after this width */
+	background: #FFF;
+	border: solid 5px #999;
+	color: #000;
+	border-radius: 5px;
+	z-index:9999;
+}
+
+#popup_title {
+	font-size: 14px;
+	font-weight: bold;
+	text-align: center;
+	line-height: 1.75em;
+	color: #666;
+	background: #CCC url(../img/title.gif) top repeat-x;
+	border: solid 1px #FFF;
+	border-bottom: solid 1px #999;
+	cursor: default;
+	padding: 0em;
+	margin: 0em;
+}
+
+#popup_content {
+	background: 1em 1em no-repeat url(../img/info.gif);
+	padding: 1em 1.75em;
+	margin: 0em;
+}
+
+#popup_content.alert {
+	background-image: url(../img/important.gif);
+	background-position:right;
+	margin-right:20px;
+}
+
+#popup_content.confirm {
+	background-image: url(../img/info.gif);
+	background-position:right;
+	margin-right:20px;
+}
+
+#popup_content.prompt {
+	background-image: url(../img/help.gif);
+	background-position:right;
+	margin-right:20px;
+}
+
+#popup_message {
+	padding-left: 10px;
+	padding-right: 25px;
+}
+
+#popup_panel {
+	text-align: center;
+	margin: 1em 0em 0em 1em;
+}
+
+#popup_prompt {
+	margin: .5em 0em;
+}
+/*
+	FIM DE FUNÇÕES CSS DO JALERT
+*/
+/* FUNÇÔES DO CALENDARIO*/
+div.calendario {
+	width: 156px;
+	position: absolute;
+	background: #EEE repeat-y right;
+	border-left: 1px solid #f6f6f6;
+	border-top: 1px solid #f6f6f6;	
+	display: none;
+	z-index:99999!important;
+}
+
+div.calendario a.fechar {
+	display: block;
+	position: absolute;
+	top: -19px;
+	right: 0px;
+	height: 18px;
+	text-decoration: none;
+	background: #fff;
+	width: 20px;
+	text-align:center;
+	line-height: 18px;
+	color: #000;
+	font:bold 12px Tahoma;
+}
+
+div.calendario a.bt_controle_mes {
+	display: block;
+	height: 15px;
+	position: absolute;
+	top: 0px;
+	vertical-align: middle;
+	text-decoration: none;
+	color:#222;
+	line-height:15px;
+	vertical-align: middle;	
+}
+
+div.calendario a.bt_voltar_mes { left: 2px; }
+div.calendario a.bt_avancar_mes { right: 2px; }
+
+div.calendario p.nome_mes {
+	text-align: center;
+	display: block;
+	height: 18px;
+	background: #efeff0;
+	font-size: 12px;
+	font-weight: bold;
+	color: #6d6d6d;
+	line-height:18px;
+	vertical-align: middle;
+	margin: 0;
+}
+
+div.calendario ul {
+	margin:0;
+	padding:0;
+}
+div.calendario ul li {
+	display: block;
+	float: left;
+	width: 22px;
+	height: 17px;
+	text-align: center;
+	font-size: 11px;
+	line-height: 17px;
+	vertical-align: middle;
+}
+
+div.calendario ul li a { font-weight: bold; color:#6d6d6d; text-decoration:none; }
+div.calendario ul li a:hover { text-decoration: underline; }
+
+div.calendario ul li.semana {
+	background: #c0c7ca;
+	font-weight: bold;		
+	color: #fff;
+}
+
+div.calendario ul li.dia {
+	color: #999;
+}
+
+div.calendario ul li.default {	
+	background: #ececed;
+	color: #f00; 
+	font-weight: bold;
+}
+
+div.calendario ul li.default a { color: #f00; }
+
+div.exemplo { margin-bottom: 150px; }
+/*FIM FUNCOES DO CALENDARIO*/
+/*FUNÇOES DO BALAO*/
+#bubble_tooltip{
+	width:147px;
+	position:absolute;
+	display:none;
+}
+#bubble_tooltip .bubble_top{
+	background-image: url('../img/bubble_top.gif');
+	background-repeat:no-repeat;
+	height:16px;	
+}
+#bubble_tooltip .bubble_middle{
+	background-image: url('../img/bubble_middle.gif');
+	background-repeat:repeat-y;	
+	background-position:bottom left;
+	padding-left:7px;
+	padding-right:7px;
+}
+#bubble_tooltip .bubble_middle span{
+	position:relative;
+	top:-8px;
+	font-family: Calibri;
+	font-size:11px;
+	color:#234725;
+}
+#bubble_tooltip .bubble_bottom{
+	background-image: url('../img/bubble_bottom.gif');
+	background-repeat:no-repeat;
+	background-repeat:no-repeat;	
+	height:44px;
+	position:relative;
+	top:-6px;
+}
+/*FIM FUNCOES DO BALAO*/
+/*NOVO BALÃO*/
+.tip {
+    color: #234725;
+    background:#cfc;
+    display:none; /*--Hides by default--*/
+    padding:5px;
+    position:absolute;    
+	 z-index:1000;
+    border-radius: 3px;
+	 max-width:90%;
+}
+
+/*FIM NOVO BALÃO*/
+/*ESTILIZANDO BARRA DE COLAGEM*/
+
+/*FIM BARRA DE ROLAGEM*/
+/*MOdal
+element.style {
+	overflow: hidden;
+}
+.modal.fade.in {
+	top: 10%;
+}
+.modal.fade {
+	top: -25%;
+	-webkit-transition: opacity .3s linear,top .3s ease-out;
+	-moz-transition: opacity .3s linear,top .3s ease-out;
+	-o-transition: opacity .3s linear,top .3s ease-out;
+	transition: opacity .3s linear,top .3s ease-out;
+}
+.fade.in {
+	opacity: 1;
+}
+.modal {
+	position: fixed;
+	top: 10%;
+	left: 50%;
+	z-index: 1050;
+	width: 560px;
+	height: auto;
+	margin-left: 280px;
+	background-color: #fff;
+	border: 1px solid #999;
+	border: 1px solid rgba(0,0,0,0.3);
+	-webkit-border-radius: 6px;
+	-moz-border-radius: 6px;
+	border-radius: 6px;
+	outline: 0;
+	-webkit-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+	box-shadow: 0 3px 7px rgba(0,0,0,0.3);
+	-webkit-background-clip: padding-box;
+	-moz-background-clip: padding-box;
+background-clip: padding-box;
+}
+.fade {
+	opacity: 0;
+	-webkit-transition: opacity .15s linear;
+	-moz-transition: opacity .15s linear;
+	-o-transition: opacity .15s linear;
+	transition: opacity .15s linear;
+}
+*/
+@media only screen and (max-width: 1024px){
+	.dados{
+		width:70%;
+	}
+}

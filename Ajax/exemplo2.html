@@ -1,0 +1,39 @@
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>Exemplo 2 − Calculadora </title>
+		<script type="text/javascript" src="ajaxInit.js"></script>
+		<script type="text/javascript">
+		function calcular(){			
+			ajax = ajaxInit();
+			document.getElementById("resultado").innerHTML = "loading...";
+			if(ajax){
+				ajax.onreadystatechange = resultado;
+				v1 = document.getElementById("v1").value;
+				v2 = document.getElementById("v2").value;
+				v3 = document.getElementById("v3").value;
+				url = 'calcular.php?v1='+v1+'&v2='+v2+'&v3='+v3;
+				ajax.open('GET', url, true);
+				ajax.send(null);
+			}
+		}
+		function resultado(){
+			if(ajax.readyState == 4) {
+				if(ajax.status == 200) {
+					document.getElementById("resultado").innerHTML = ajax.responseText;
+				}
+			}
+		}
+		</script>
+	</head>
+	<body>
+		<form name="calculadora">
+			<fieldset style="width:50%; margin:auto">
+				<input type="text" name="v1" id="v1" size="3"/> <input type="text" name="v3" id="v3" size="1"/>
+				<input type="text" name="v2" id="v2" size="3"/> =
+				<label id="resultado"></label> <br/>
+				<input type="button" value="Calcular" onClick="calcular()" />
+			</fieldset>
+		</form>
+	</body>
+</html>

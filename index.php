@@ -10,18 +10,19 @@
         <script src="tool/jquery.js" language="javascript"></script>
         <script type="text/javascript" src="tool/script.js"></script>
         <script type="text/javascript">
-			var spag = "#page1";
-			$(document).ready(function(e) {
-				$(".pagians a").click(function(e) {
-					$(spag).removeClass('active');
-					spag = $(this).attr('id');
-					spag = "#page"+spag;
-					$(spag).addClass('active');
-				});
-            });
+		var spag = "#page1";
+		$(document).ready(function(e) {
+			$(".pagians a").click(function(e) {
+				$(spag).removeClass('active');
+				spag = $(this).attr('id');
+				spag = "#page"+spag;
+				$(spag).addClass('active');
+			});
+		});
         </script>
    </head>
    <body>
+   	<!-- Starting on git-->
    	<div id="menus">
           <ul>
             <li class="pagians" id="page1">

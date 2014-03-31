@@ -1,0 +1,100 @@
+﻿//git tutorial
+comandos
+==================configurações básica==========================================
+conf usuário e e-mail
+	user $ git config --global user.name "M.R.Cardoso" //name user
+	email $ git config --global user.email "cardozinhos.mrc@gmail.com" email
+==================configurações básica==========================================
+==================configurar caminho============================================
+para configurar o caminho, para sempre começar o Git bash na sua pasta de projetos basta:
+procurar o executavel programa git bash clicar com btn.direito->propriedades
+em iniciar em: preencha com o caminho do seu projeto;
+==================configurar caminho============================================
+==================comandos de pastas============================================
+para acessar uma pasta use o comando
+	cd "nome da pasta"
+	ex: cd aulasGIT ou cd aulasGIT/git/local...etc
+para voltar um diretório use
+	cd .. //cd espaco 2 pontos
+==================comandos de pastas============================================
+==================comandos de básicos============================================	
+(work directory | editando os arquivos add arquivos)
+(staged area | git add)
+(mandando pro repositório | git commit)
+	git init //para criar um repositório use o comando
+	git status //para visualizar o status daquele repositório use o comardo	
+	git add "nome do arquivo" //para começar a contralar os arquivos, adicionar o arquivo
+	ex: git add chendlog.txt
+		git add *.txt //adiciona todos os arquivos com aquila extensão
+		git add . // adiciona tudo
+	git commit -m "nome do text" //para comitar seus arquivos, salvar as mudancas 
+	ex: git c ommit -m "commit inicial"
+	ou use: git commit -a -m "nome do text" //para pular o comando git add
+
+fazer git iginorar determinado arquivo
+	criar um arquivo .gitignore 
+	com conteudo = passando o nome do arquivo qeu deseja ignorar ex: marlon.txt
+	pode ser passado um comando por linha
+==================comandos básicos============================================
+==================comandos básicos = visualizar repositório alterações===================
+	git diff //para ver o que for alterado, mas que ñ foi para staged area
+	git diff --staged //para ver o que for alterado, quando esta na staged area
+	
+	git log // mostra um log de os commits do projeto, retorna o histórico do repositório, a 1ª linha onde esta commit e tem uma chave, isso é referencia, para o caso de quiser retornar uma versão anterior
+	o git log começa com mensagem | data | autor, começa do mais recente
+	git log -p // tdos os commits com os diff junção de git log com git diff
+	isso gera paginação, por isso para visualizar tem que dar ENTER,
+	quando chegar ao fim(END) precione a tecla q para voltar a linha de comando
+	git log -p -1 ou -2// tras 1 unico commit, o ultimo
+	git log --pretty=oneline // exibe só o código dos commits
+	gitk // interface grafica, que estão os relatórios do projeto( relatorios mais detalhados)
+==================comandos básicos = visualizar repositório alterações===================
+==================desfazer comantos===================
+	editar o commit use o comando, juntar nova funcionalidades
+	git commit --amend -m "nome do commit "entre (edicao) para mostra q é edição
+	moda a chave do commit, mas não cria outro commit
+	
+	para remover um arquivo da staged area
+	git reset HEAD nome do arquivo // volta para work directory
+	
+	fazer teste com arquivos, sem causar riscos
+	git checkout -- nome do arquivo // para desfazer(reverter) as mudanças no seu diretório voltar arquivo ao estado original
+	
+	para remover um arquivo do repositório usa-se o comando
+	git rm nome do arquivo
+==========================tags e & branch================================
+  tag = etiquetas, é um ponteiro, não recomendado quando for trabalhar em ambientes de DEV
+	git tag = lista as tags
+	git tag -a nomeTag(ex:v1.0)  -m "msg(ex:versao1.0)"// cria uma tag (-a cria uma tag anotada), a tag é criada no commit atual
+	git tag -a nomeTag +(chave do commit que deseja criar uma tag)  -m "msg" //para crar uma tag de um commit antigo
+	git show // para ver detalhe da tag
+	git checkout nomeTag//para usar a tag na versao do sistema
+	git tag -d nomeTag// para deletar uma tag
+  branch varias ramificação, segimentação, mastre é o branch default, pode ser um ambiente de DEV !=
+	git branch // listar todos os branch
+	git branch nomeBranch//criar um novo brench
+	git checkout nomebranch //alterar o branch(altera o ambiente)
+	git checkout -b nomebranch //para pular a criação do branch, cria e seleciona
+	git branch -d nomebranch //para deletar o branch
+	git merge nomeBranchOrigen// trazer as alterações no branch de teste para o branch master,(vc tem q estar no branch destino)
+	
+==========================tags e & branch================================
+==========================rede local================================
+	git init --bare//criar o reposiótorio no servidor, que vai ser acessivel a outras maquinas(estação de trabalho)(ñ pode ser um git init comum)
+	git clone file:////nomeservidor/caminho (nomedapastaClonada?é opcional) //para compartilhar a estrutura do projeto, capturar a base do projeto
+	git push nomeDoServidorRemoto master //(git envie para o servidor X os arquivos do branch mastre)enviar para o servidor, precida saber o nome do servidor remoto
+	git remote //para saber o nome do servidor (lista o nome de cada remoto que você especificou)
+	/*
+		Se você tiver clonado seu repositório, você deve pelo menos ver um chamado origin — 
+		esse é o nome padrão que o Git dá ao servidor de onde você fez o clone
+	*/
+	git remote -v //que mostra a URL que o Git armazenou para o nome do remoto
+	git remote add [nomecurto] [url] (ex: git@github.com:MRCardoso/Projeto.git) //  Para adicionar um novo repositório remoto no Git
+	git pull nomeDoServidorRemoto master//atualizar arquivos, trazer dados do servidor(ele faz um merge automatico)
+	git fetch nomeDoServidorRemoto nomeBranch
+==========================rede local================================
+git@github.com:MRCardoso/curso-git.git
+=====================acesso pc local ao github via ssh================
+ssh-keygen // gerar um par de chaves (ele vai pedir um nome de arquivo mas ñ precisa só click em ENTER)
+após vc vai escolher uma senha (se quiser proteger sua chave com uma senha) my-sh_ssh(cardoso)
+pegar o caminho ssh para fazer um clone

@@ -11,7 +11,7 @@
 		$dao = new CadastroDAO();
 		$oLC = $dao->select(5, $busca);
 		$numRegistros = count($oLC);
-		#unset($dao);
+		unset($dao);
 			
 		if($numRegistros == 0){
 			$busca[0] = 'responsavel';

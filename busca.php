@@ -14,13 +14,11 @@
 		unset($dao);
 			
 		if($numRegistros == 0){
-			/*
 			$busca[0] = 'responsavel';
 			$dao = new CadastroDAO();
 			$oLC = $dao->select(5, $busca);
 			$numRegistros = count($oLC);
 			unset($dao);
-			*/
 		}
 		if(! is_null($oLC)){
 			foreach($oLC as $oC){

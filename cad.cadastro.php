@@ -37,7 +37,15 @@
 			ajax = ajaxInit();
 			document.getElementById("totalRegistros").remove();
 			
-		}*/
+		}
+		founction loading(){
+			e.preventDefault();
+			var link = $(obj).data('link').replace('/','.');
+			$("ul.sub-menu ul.sub-menu li").removeClass('active');
+			$(obj).parent().addClass('active');
+			revmais.loadHTML(link);
+		}
+		*/
 		$(function () {
 			$("#busca").keyup(function () {
 				var busca = $(this).val();
@@ -69,6 +77,8 @@
 							if($(".modal-body form input").val() == 'cardoso'){
 								$("form").attr("action", "cad.cadastro.edit.php");
 								$("form").submit();
+							} else if($(".modal-body form input").val() == ''){
+								bootbox.alert('Preencher a senha');
 							} else{
 								bootbox.alert('A senha esta incorreta');
 							}
@@ -108,7 +118,7 @@
 		<div class="input-group floatRight" style="width:30%">
 			<input type="text" class="form-control" placeholder="Faça sua busca...." name="busca" id="busca" />
 			<span class="input-group-btn">
-				<button type="button" id="btnEnvia" class="btn btn-default" style="height:34px;">
+				<button type="button" id="btnEnvia" class="btn btn-info" style="height:34px;">
 					<img src="img/pesquisamini.png" width="18" height="20" alt="pesquisar" />
 				</button>
 			</span>

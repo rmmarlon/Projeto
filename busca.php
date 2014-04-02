@@ -3,7 +3,7 @@
 	require_once ("conADODBopen.php");
 	require_once ("tool/funcoes.php");
 	require_once ("classes/autoload.php");
-
+	//busca via ajax
 	$busca[0] = 'nome';
 	$busca[1] = isset($_GET['busca']) ? trim($_GET['busca']) : '';
 	

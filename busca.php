@@ -18,7 +18,7 @@
 			$dao = new CadastroDAO();
 			$oLC = $dao->select(5, $busca);
 			$numRegistros = count($oLC);
-			#unset($dao);
+			unset($dao);
 		}
 		if(! is_null($oLC)){
 			foreach($oLC as $oC){

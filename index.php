@@ -1,3 +1,9 @@
+<!-- 
+	self:: - quando se trata da classe, atributos estaticos. 
+	$this é um 'ponteiro' que 'aponta' para o proprio objeto. 
+	parent:: - Onde podemos acessar métodos de outras classes extendidas
+	extends - herda métodos da classe pai
+-->
 ﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Frameset//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-frameset.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
